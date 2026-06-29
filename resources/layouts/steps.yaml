@@ -1,0 +1,41 @@
+schema_version: "1"
+name: steps
+body_format: rows
+version: "1.0.0"
+since: "1.5.0"
+category: infographic
+serves: [readability]
+content_types: [tutorial, report]
+industry: [general]
+tags: [infographic, steps, process, workflow, how-to]
+position: body
+when_to_use: |
+  执行步骤、方法论流程、落地顺序。
+  适合教程拆解、操作说明、流程介绍。
+when_not_to_use: |
+  带图片的步骤用 image-steps；
+  时间线用 timeline；流程图用 infographic type:flow。
+pairs_well_with: [part, toc, checklist]
+avoid_combining_with: []
+anti_pattern: |
+  没有任何满足 2 列的行导致渲染失败；
+  手动写步骤序号导致维护成本变高；
+  说明写太短失去步骤的引导价值。
+rows:
+  delimiter: "|"
+  min_columns: 2
+  schema:
+    - name: title
+      description: 步骤标题，动词开头
+    - name: description
+      description: 步骤说明，解释具体怎么做
+example: |
+  :::steps[落地步骤]
+  先给结果判断 | 不要先讲背景和过程
+  再补数据和案例 | 让读者知道这套方法真的成立
+  最后落到动作 | 结尾明确下一步该做什么
+  :::
+metadata:
+  author: wechat-official-publisher
+  provenance: local
+  inspired_by: "公众号文章 steps layout"

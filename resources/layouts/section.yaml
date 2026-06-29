@@ -1,0 +1,40 @@
+schema_version: "1"
+name: section
+body_format: fields
+version: "1.0.0"
+category: opening
+serves: [章节分隔, 长文结构]
+content_types: [life, tech, insight]
+industry: [general]
+tags: [section, heading, structure]
+position: body
+when_to_use: |
+  用于文章中段开启一个新的主题段落，替代过度装饰化的标题模块。
+when_not_to_use: |
+  不要把每个自然段都做成 section；只在结构转折处使用。
+pairs_well_with: [summary, steps, timeline]
+avoid_combining_with: []
+anti_pattern: |
+  连续堆叠多个 section 会让文章节奏过碎。
+fields:
+  required:
+    - name: title
+      description: 章节标题
+      example: "为什么要重新整理主题"
+  optional:
+    - name: label
+      description: 短标签
+      example: "PART 01"
+    - name: subtitle
+      description: 章节说明
+      example: "先把选择变少，再把表达变清楚。"
+example: |
+  :::section
+  label: PART 01
+  title: 为什么要重新整理主题
+  subtitle: 先把选择变少，再把表达变清楚。
+  :::
+metadata:
+  author: wechat-official-publisher
+  provenance: local
+  inspired_by: "公众号长文阅读结构"

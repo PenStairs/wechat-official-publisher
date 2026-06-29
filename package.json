@@ -1,0 +1,55 @@
+{
+  "name": "wechat-official-publisher",
+  "version": "0.1.0",
+  "description": "Markdown to WeChat Official Account compatible rich-text HTML publisher CLI.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "wechat-publisher": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "resources/**/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PenStairs/wechat-official-publisher.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PenStairs/wechat-official-publisher/issues"
+  },
+  "homepage": "https://github.com/PenStairs/wechat-official-publisher#readme",
+  "keywords": [
+    "wechat",
+    "official-account",
+    "markdown",
+    "publisher",
+    "cli"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "prepare": "npm run build",
+    "pretest": "npm run build && npm run preview:block-gallery && npm run preview:content-gallery",
+    "preview:block-gallery": "node scripts/generate-block-gallery.mjs",
+    "preview:content-gallery": "node scripts/generate-template-gallery.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^20.17.24",
+    "playwright": "^1.60.0",
+    "typescript": "^5.8.2",
+    "vitest": "^4.1.8"
+  },
+  "dependencies": {
+    "juice": "^11.1.1",
+    "markdown-it": "^14.2.0",
+    "yaml": "^2.9.0"
+  }
+}

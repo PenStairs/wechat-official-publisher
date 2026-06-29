@@ -1,0 +1,52 @@
+schema_version: "1"
+name: reading-note
+body_format: fields
+version: "1.0.0"
+since: "1.6.0"
+category: evidence
+serves: [readability, evidence, memorability]
+content_types: [book-review, reading-note, opinion, tutorial]
+industry: [general]
+tags: [reading, source-note, book-note, excerpt, evidence]
+position: body
+when_to_use: |
+  书本解读、资料卡、原文内容。
+  适合放一段来自书本或文章的原始内容，后续解读应写在 layout 外面的普通正文里。
+  用它替代 Markdown 引用格式，避免微信引用组件 300 字限制。
+  如果用户已经提供原文，必须完整保留到 content 字段，不要截断、摘取、概括或改写。
+  大段原文必须使用 content: | 多行块，避免只保留第一行。
+when_not_to_use: |
+  短金句用 quote；
+  普通提示用 callout；
+  章节分隔用 section。
+pairs_well_with: [section, summary, callout, cta]
+avoid_combining_with: [quote]
+anti_pattern: |
+  source 没有写明书名、章节或来源；
+  content 为空或只写一句口号；
+  用户给了完整原文但只保留片段、摘要或开头几句；
+  把作者解读、总结或 takeaway 写进 layout 里。
+fields:
+  required:
+    - name: source
+      description: 来源说明，建议写书名、章节、作者或材料出处
+      example: "《深度工作》第 4 章"
+    - name: content
+      description: "原始文章或书摘内容；用户提供了完整原文时必须完整保留，长内容用 content: | 多行块"
+      example: "佛是大觉义，就其德以立尊号，此无具体人，本名佛陀，简称曰佛。"
+  optional:
+    - name: eyebrow
+      description: 标签词
+      example: "原文"
+example: |
+  :::reading-note
+  eyebrow: 原文
+  source: 《乙亥讲演录·启机分·释佛》
+  content: |
+    佛是大觉义，就其德以立尊号，此无具体人，本名佛陀，简称曰佛。
+    觉之圆妙者也，又名一切智，觉知一切法之事理。
+  :::
+metadata:
+  author: wechat-official-publisher
+  provenance: local
+  inspired_by: "书本解读和资料卡场景的公众号阅读笔记 layout"

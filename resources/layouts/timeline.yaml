@@ -1,0 +1,42 @@
+schema_version: "1"
+name: timeline
+body_format: rows
+version: "1.0.0"
+since: "1.5.0"
+category: infographic
+serves: [readability]
+content_types: [report, announcement, tutorial]
+industry: [general]
+tags: [infographic, timeline, history, phases, evolution]
+position: body
+when_to_use: |
+  阶段、时间、演进路径。
+  适合产品演进、历史梳理、多阶段场景说明。
+when_not_to_use: |
+  步骤流程用 steps；版本日志用 changelog（sprint4）。
+pairs_well_with: [part, steps, metrics]
+avoid_combining_with: []
+anti_pattern: |
+  没有任何满足 3 列的行导致渲染失败；
+  阶段列写太多导致视觉混乱；
+  和 steps 混用（timeline 强调时序，steps 强调动作）。
+rows:
+  delimiter: "|"
+  min_columns: 3
+  schema:
+    - name: date
+      description: 阶段或时间标签（如"品牌稿"、"2026-01"）
+    - name: title
+      description: 该阶段的事件或标题
+    - name: description
+      description: 说明，补充这个阶段的背景或意义
+example: |
+  :::timeline[产品演进]
+  2026 | 稳定草稿箱链路 | 把 Markdown、图片上传、草稿创建和人工预览串成一条可复用流程。
+  2025 | 建立公众号安全排版 | 收敛到单列、纯色、内联样式，优先保证微信编辑器可接受。
+  2024 | 验证自动化发布原型 | 跑通本地渲染和基础配置，为后续主题与 layout 打底。
+  :::
+metadata:
+  author: wechat-official-publisher
+  provenance: local
+  inspired_by: "公众号文章 timeline layout"

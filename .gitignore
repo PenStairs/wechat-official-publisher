@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+coverage/
+.nyc_output/
+*.tgz
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Runtime logs and caches
+*.log
+*.tmp
+*.temp
+.cache/
+tmp/
+temp/
+
+# Generated preview artifacts
+previews/*.html
+previews/*.png
+previews/*.jpg
+previews/*.jpeg
+previews/*.webp
+previews/*.gif
+previews/*.svg
+previews/theme-audit/
+previews/theme-audit-retained/
+!previews/codex-parallel-dev-cover.png
+
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
