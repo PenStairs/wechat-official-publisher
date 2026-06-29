@@ -5,7 +5,8 @@ import { listSupportedBlockMetadata, renderMarkdownArticle, themes } from "../di
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outPath = path.join(projectRoot, "previews", "block-gallery.html");
-const localImage = "codex-parallel-dev-cover.png";
+const localImage = "https://dummyimage.com/1200x630/1f2937/ffffff.png&text=WeChat+Publisher";
+fs.mkdirSync(path.dirname(outPath), { recursive: true });
 const blocks = listSupportedBlockMetadata();
 const themeEntries = Object.values(themes);
 

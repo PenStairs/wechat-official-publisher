@@ -5,8 +5,9 @@ import { parseArticleDocument, renderMarkdownArticle, themes } from "../dist/ind
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const previewDir = path.join(projectRoot, "previews");
-const articlePath = path.join(previewDir, "template-gallery.md");
+const articlePath = path.join(projectRoot, "tests", "fixtures", "template-gallery.md");
 const indexPath = path.join(previewDir, "template-gallery-index.html");
+fs.mkdirSync(previewDir, { recursive: true });
 const markdown = fs.readFileSync(articlePath, "utf8");
 const article = parseArticleDocument(markdown, articlePath);
 const themeEntries = Object.values(themes);

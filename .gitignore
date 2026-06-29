@@ -21,16 +21,7 @@ tmp/
 temp/
 
 # Generated preview artifacts
-previews/*.html
-previews/*.png
-previews/*.jpg
-previews/*.jpeg
-previews/*.webp
-previews/*.gif
-previews/*.svg
-previews/theme-audit/
-previews/theme-audit-retained/
-!previews/codex-parallel-dev-cover.png
+previews/
 
 # OS and editor files
 .DS_Store
